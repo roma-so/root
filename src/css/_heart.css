@@ -1,0 +1,23 @@
+:root {
+  --headerColor : #111;
+  --mainColor: #000;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html,
+body{
+  width: 100%;
+  height: 100%;
+}
+body{
+  font-family: Helvetica, sans-serif;
+}
+
+.crawl{
+  font-size: 6px;
+}
