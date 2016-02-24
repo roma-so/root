@@ -1,22 +1,30 @@
-import '../components/header.tag';
+import '../components/nav.tag';
+import '../components/roma.tag';
 import '../components/footer.tag';
 
 <home>
-	<header></header>
+	<header class="clearfix">
+		<nav/>
+		<div class="info">
+			<p><a href="mailto:roma@roma.so">roma@roma.so</a></p>
+			<p>Roma&nbsp;Kos</p>
+			<p><span class="moscow">&#9733;</span>&nbsp;Moscow</p>
+		</div>
+		<roma/>
+	</header>
 	<div id="home" class="content">
-		<section class={ user: true, 'boom' : this.gum } >
-			<img  title="Me walking with cat" src="/me.png"/>
-			<div class="kitty_eyes"></div>
-			<img class="whistle" src="/whistle.png"/>
-			<img class="bubble" onclick={bubble} src="/bubble.png"/>
-		</section> 	
+		<style scoped>
+			.info{
+				position: absolute;
+		    font-size: 18px;
+		    margin-top: 5%;
+		    left: 5%;
+			}
+			.moscow{
+				color:red;
+			}
+		</style>
 	</div>
 	<footer></footer>
-
-	<script>
-		this.bubble = (evt) => {
-			this.gum = true
-		};
-	</script>
 
 </home>
