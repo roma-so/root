@@ -1,11 +1,16 @@
 #riot-app{
+	position: absolute;
 	height: 100%;
 	width: 100%;
+
+	left: 0;
+	top: 0;
 }
 
 .content {
-	height: 100%;
+  position: relative;
 	width: 100%;
+  transition: background-color .5s ease-in-out;
 	& > *{
 		animation: opacity .3s ease-in-out;
 	}
@@ -22,7 +27,7 @@
 }
 
 header{
-    position: absolute;
+    position: relative;
     top: 0;
     left: 0;
 }
@@ -34,128 +39,47 @@ header{
 	width: 100%;
 }
 
-@keyframes eyes{
-	0%,8%{
-		height: 0;
 
-	}
-	10%{
-		height: 5px;
-	}
-	12%, 68%{
-		height: 0;
-	}
-	70%{
-		height: 5px;
-	}
-	72%, 100%{
-		height: 0;
-	}
+.content{
+	background-color: $blue;
 }
 
-@keyframes whistle{
-	0%,99%{
-		opacity: 1;
-	}
-
-	100%{
-		opacity: 0;
-	}
-}
-@keyframes bubble{
-	0%, 80%{
-		opacity: 1;
-	}
-
-	0%, 15%{
-		transform: scale(1);
-	}
-
-
-	100%{
-		transform: scale(2);
-		opacity: 0;
-	}
-}
-.user{
-	position:absolute;
-	
-	right: 2%;
-	top: 2%;
-
-	.kitty_eyes,
-	.whistle,	
-	.bubble{
-		position: absolute;
-		left: 0;
-		top:0;
-	}
-
-
-
-	.kitty_eyes{
-		animation-iteration-count: infinite;
-		animation: eyes 12s infinite;
-		transform: rotate(35deg);
-		border-radius: 2px;
-		margin: 82px 78px;
-		background: #1B1309;
-		width: 14px;
-		height: 0px;
-	}
-	
-
-
-	.bubble{
-		margin: 9px 15px;
-		cursor: pointer;
-		width: 50px;
-
-	}
-	&:hover{
-		.bubble{
-			transition: all .2s ease-in-out;
-			filter:brightness(125%);
-		}
-	}
-
-	&.boom{
-
-		.whistle{
-			opacity: 0;
-			animation: whistle .4s ease-in-out;
-		}
-		.bubble{
-			animation: bubble .3s ease-in-out;
-			transition: all .3s ease-in-out;
-			transform: scale(2);
-	    	cursor: auto;
-	    	opacity: 0;
-
-			margin: -4px -24px;
-			width: 60px;
-		}
-
-	}
-
-	.whistle{
-		margin: 34px 64px;
-		width: 11px;
-	}
-
-	img{
-		width: 120px;
-	}
+.content.projects{
+	background-color: black;
 }
 
-#home{
-	background: #90ad9b;
+.tag{
+
+  border-radius: 4px;
+	margin-right: 5px;
+	padding: 3px 8px;
+	font-size: 13px;
+	line-height: 2;
+
+	&.support{
+    background: #8A388E;
+	}
+	&.jquery{
+		background: #DA530C;
+	}
+	&.tech{
+		background:	#0C5479;
+	}
+	&.content{
+		background: #A50721;
+	}
+	&.imp{
+    background: #07252F;
+	}
+	&.wordpress{
+		background: #A50721;
+	}
 }
 
 footer{
 	position: absolute;
 	font-size: 80%;
 	color: #1B1306;
-	bottom: 2%;
-	left: 2%;
+	bottom: 5%;
+	left: 5%;
 }
