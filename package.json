@@ -1,7 +1,6 @@
 {
-  "name": "riot-startkit",
-  "version": "1.0.0",
-  "description": "A Riot - PostCSS - Webpack startkit from wbkd.io",
+  "name": "roma.so",
+  "version": "1.0. My",
   "main": "webpack.config.js",
   "scripts": {
     "html": "cpy ./src/index.html ./build/",
@@ -10,16 +9,15 @@
     "serve": "webpack-dev-server --hot",
     "dev": "npm-run-all html serve"
   },
-  "author": "webkid.io",
-  "license": "MIT",
+  "author": "roma-sp",
   "dependencies": {
     "normalize.css": "^3.0.3",
     "npm-run-all": "^1.3.2",
     "riot": "^2.3.11",
     "riotcontrol": "0.0.1"
   },
-  "repository": { 
-    "type" : "git", 
+  "repository": {
+    "type" : "git",
     "url" : "https://github.com/wbkd/riotjs-startkit.git"
   },
   "devDependencies": {
@@ -32,6 +30,7 @@
     "css-loader": "^0.23.0",
     "csswring": "^4.0.0",
     "postcss-custom-properties": "^5.0.0",
+    "postcss-simple-vars": "*",
     "postcss-import": "^7.1.3",
     "postcss-loader": "^0.8.0",
     "postcss-nested": "^1.0.0",

@@ -2,10 +2,13 @@ var webpack = require('webpack');
 
 // postcss plugins
 var cssimport = require('postcss-import');
+
 var customProperties = require('postcss-custom-properties');
 var autoprefixer = require('autoprefixer-core');
-var csswring = require('csswring');
+var simplevars = require('postcss-simple-vars');
 var cssnested = require('postcss-nested');
+var csswring = require('csswring');
+
 
 module.exports = {
   entry: {
@@ -27,14 +30,14 @@ module.exports = {
       { test: /\.tag$/, exclude: /node_modules/, loader: 'riotjs-loader', query: { type: 'es6' } }
     ],
     loaders: [
-      { 
-        test: /\.js|\.jss|\.tag$/, 
-        exclude: /node_modules/, include: /src/, 
-        loader: 'babel-loader', 
+      {
+        test: /\.js|\.jss|\.tag$/,
+        exclude: /node_modules/, include: /src/,
+        loader: 'babel-loader',
         query: {modules: 'common'} },
-      { 
-        test: /\.css$/, 
-        loader: 'style-loader!css-loader!postcss-loader' 
+      {
+        test: /\.css$/,
+        loader: 'style-loader!css-loader!postcss-loader'
       },
       {
         test: /\.scss$/,
@@ -42,7 +45,7 @@ module.exports = {
       },
     ]
   },
-  postcss: [cssimport, cssnested, customProperties, autoprefixer, csswring],
+  postcss: [cssimport, cssnested, simplevars, customProperties, autoprefixer, csswring],
   devServer: {
     contentBase: './build/',
     port: 1337,
