@@ -132,9 +132,9 @@ Navigation.prototype.setRender= function(){
 
 Navigation.prototype.checkHover= function(){
 	if ( this.intersects.length > 0 ) {
-		
+
 		this.block.style.cursor = "pointer";
-		
+
 		this.INTERSECTED = this.intersects[ 0 ].object;
 		return true
 
@@ -160,9 +160,10 @@ Navigation.prototype.draw= function(){
 
 	if(this.explosion){
 		this.BYE.currentPosition = this.BYE.position.z;
-		if(this.BYE.currentPosition < -200) {
+		if(this.BYE.currentPosition < -150) {
 			this.explosion = false;
-			this.BYE.visible = false; 
+			this.BYE.visible = false;
+			riot.route('projects')
 		}
 		this.BYE.position.z= this.BYE.currentPosition - 2;
 
@@ -172,7 +173,7 @@ Navigation.prototype.draw= function(){
 
 
 	this.renderer.render( this.scene, this.camera );
-	
+
 }
 
 module.exports = Navigation
